@@ -1,20 +1,24 @@
-# Shravani Kumar — Portfolio Website
+# 🌟 Shravani Kumar — Portfolio Website
 
-A premium, modern, and highly interactive developer portfolio website built using React, TanStack Start (SSR), TailwindCSS, and Framer Motion. 
+A premium, modern, and highly interactive developer portfolio website built using **React 19**, **TanStack Start (SSR)**, **TailwindCSS**, and **Framer Motion**. 
 
-This portfolio showcases professional projects, technical skills, coursework highlights, and extracurricular achievements with fluid animations and responsive layout designs.
+This portfolio showcases professional projects, technical skills, coursework highlights, and extracurricular achievements with fluid animations, custom dialogs, and a responsive layout.
 
 ---
 
 ## ✨ Features
 
-- **🚀 Modern Visual Design**: Sleek layout, glassmorphism, responsive grids, and curated color palettes (OKLCH color space).
-- **🎨 Premium Animations**: Implemented smooth cubic-bezier (`[0.16, 1, 0.3, 1]`) entrance transitions and hover-based card lift & image zoom effects.
-- **🌐 Social Icons in Navigation**: Sticky header containing easy-to-use redirects to your LinkedIn, GitHub, Email, and Call profiles.
-- **📁 Project Section**: Showcases active projects with direct links to codebases (SentimentScope, ProjectPilotAI).
-- **📄 Downloadable Resume**: A dedicated Curriculum Vitae section configured for seamless downloading of `/public/shravvresume.pdf`.
-- **📨 Contact Mailer**: Integrated contact form that automatically handles formatting and drafts email templates.
-- **⚡ Hot Module Replacement**: Super-fast development workflow powered by Vite.
+- **🚀 Premium Design & Aesthetics**: Clean typography, glassmorphism, responsive grids, and customized color palettes in the OKLCH color space.
+- **🎨 Modern Animations**: Decelerated entrance transitions (deceleration curve cubic-bezier `[0.16, 1, 0.3, 1]`) and interactive hover-based card lifts and image zooms.
+- **🌐 Header Navigation Social Integration**: Quick-redirect icons directly built into the sticky top navigation header:
+  - **GitHub** (Opens profile in new tab)
+  - **LinkedIn** (Opens profile in new tab)
+  - **Email** (Initiates `mailto:` link)
+  - **Call** (Initiates telephone link)
+- **📁 Selected Projects**: Spotlights main projects with direct links to their repositories (e.g., SentimentScope, ProjectPilotAI).
+- **🏆 Interactive Certifications Dialog**: Modal popup viewer for hackathons, contests, and courses, complete with support for custom image rotation orientations (e.g., 90-degree clockwise correction for the ULTRON-25 certificate).
+- **📄 Downloadable Resume**: A dedicated resume download module configured for direct downloading of the student's curriculum vitae (`shravvresume.pdf`).
+- **📨 Contact Mailer Form**: Fully functional contact form that prepares and pre-fills mail drafts to the receiver's address.
 
 ---
 
@@ -29,87 +33,17 @@ This portfolio showcases professional projects, technical skills, coursework hig
 
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
-
-### Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/Shravanik04/student-port-generator.git
-   cd student-port-generator
-nstall dependencies:
-
-bash
-npm install
-Run the development server:
-
-bash
-npm run dev
-Open http://localhost:8080/ in your browser to view the page.
-
-Build for production:
-
-bash
-npm run build
-⚙️ Configuration & Customization
-1. Update Profile & Project Details
-You can change the text content, skill list, and project descriptions by editing src/data/site-data.ts.
-# 🌟 Shravani Kumar Portfolio Website
-
-A modern, responsive, and interactive developer portfolio built to showcase my technical skills, projects, education, and achievements. Designed with smooth animations, clean aesthetics, and an engaging user experience, this portfolio reflects both my technical expertise and passion for software development.
-
-## 🚀 Live Features
-
-* Responsive design for desktop, tablet, and mobile devices
-* Smooth page transitions and interactive animations
-* Professional hero section with personal introduction
-* Skills and technology showcase
-* Featured projects with GitHub repository links
-* Downloadable resume integration
-* Contact section with social media links
-* Optimized performance and fast loading experience
-* Modern UI with glassmorphism-inspired components
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend
-
-* React 19
-* TypeScript
-* TanStack Start (SSR)
-* Tailwind CSS
-* Framer Motion
-
-### Development Tools
-
-* Vite
-* Git & GitHub
-* Antigravity IDE
-
-### UI & Icons
-
-* Lucide React
-* Responsive Design Principles
-
----
-
 ## 📂 Project Structure
 
 ```text
 student-port-generator/
 ├── public/
-│   └── shravvresume.pdf
+│   └── shravvresume.pdf      # Resume download file
 ├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── data/
-│   ├── routes/
+│   ├── assets/               # Image/photo assets
+│   ├── components/           # UI elements & custom navigation components
+│   ├── data/                 # site-data.ts (Central data source)
+│   ├── routes/               # index.tsx (Main route & page structure)
 │   └── styles/
 ├── package.json
 ├── vite.config.ts
@@ -118,114 +52,69 @@ student-port-generator/
 
 ---
 
-## ⚙️ Installation
+## 🚀 Getting Started
 
-### Clone the Repository
+### Prerequisites
 
-```bash
-git clone https://github.com/Shravanik04/student-port-generator.git
-cd student-port-generator
-```
+Make sure you have [Node.js](https://nodejs.org/) installed.
 
-### Install Dependencies
+### Installation & Development
 
-```bash
-npm install
-```
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Shravanik04/shravvportfolio.git
+   cd shravvportfolio
+   ```
 
-### Run Development Server
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-```
+3. **Run the local development server**:
+   ```bash
+   npm run dev
+   ```
+   Open `http://localhost:8080` in your browser.
 
-Open your browser and visit:
-
-```text
-http://localhost:8080
-```
-
-### Build for Production
-
-```bash
-npm run build
-```
+4. **Build for production**:
+   ```bash
+   npm run build
+   ```
 
 ---
 
-## 📄 Resume Integration
+## ⚙️ Configuration & Customization
 
-To update the resume displayed on the website:
-
-1. Save your resume as a PDF file.
-2. Place it inside the `public` folder.
-3. Rename it to:
-
-```text
-shravvresume.pdf
+### 1. Update Portfolio Data
+All text, project details, certificates, and skills are managed centrally. Simply modify [site-data.ts](file:///src/data/site-data.ts):
+```typescript
+// src/data/site-data.ts
+export const siteData = {
+  name: "Shravani Kumar",
+  role: "Computer Science Student...",
+  // ...
+};
 ```
 
-The website will automatically use the updated file for resume viewing and downloading.
+### 2. Replacing the Resume PDF
+Replace the file located in `public/shravvresume.pdf` with your updated resume PDF.
 
----
-
-## 🖼️ Profile Image
-
-To replace the portfolio profile image:
-
-1. Save your image in JPG format.
-2. Place it inside:
-
-```text
-src/assets/
-```
-
-3. Replace the existing image file used by the portfolio.
-
----
-
-## 🎯 Purpose
-
-This portfolio serves as a central platform to showcase my academic journey, technical skills, development experience, and continuous learning in the field of Computer Science and Software Engineering.
-
----
-
-## 🌱 Future Enhancements
-
-* Dark/Light theme switcher
-* Project filtering and search
-* Blog section
-* Visitor analytics dashboard
-* AI-powered portfolio customization
-* Multi-language support
+### 3. Replacing the Portrait Image
+Place your portrait photo inside `src/assets/shravani-photo.jpg` to replace the default profile photo.
 
 ---
 
 ## 👩‍💻 Author
 
 **Shravani Kumar**
+*Computer Science Engineering Student*
 
-Computer Science Engineering Student
-
-GitHub: https://github.com/Shravanik04
-
-LinkedIn: Add your LinkedIn profile link here
+- **GitHub**: [Shravanik04](https://github.com/Shravanik04)
+- **LinkedIn**: [Shravani K Shrivatsa](https://www.linkedin.com/in/shravani-k-shrivatsa-b202a537a)
 
 ---
 
 ## 📜 License
 
-This project is open-source and available under the MIT License.
-
-2. Update Your Resume PDF
-To add your actual resume to the site:
-
-Save your resume in PDF format.
-Place the file inside the public/ directory.
-Rename the file to shravvresume.pdf (overwriting the placeholder).
-3. Replace Profile Photo
-To change your main portrait:
-
-Save your new photo as a JPG file.
-Put it in src/assets/shravani-photo.jpg (overwriting the existing one).
-12:14 AM
+This project is open-source and available under the [MIT License](LICENSE).

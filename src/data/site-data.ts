@@ -6,28 +6,10 @@ export const siteData = {
   email: "shravanikumar2006@gmail.com",
   phone: "+91 8660377945",
   location: "Bengaluru, India",
+  photo: "/photo.jpg",
   summary:
-    "I'm a Computer Science and Engineering student at Raja Rajeswari College of Engineering with a CGPA of 9.8/10.0. I'm proficient in Python and C/C++ with a strong foundation in problem-solving and software development. As an aspiring Frontend Developer, I'm passionate about Artificial Intelligence, Machine Learning, web development, and emerging technologies. I'm actively involved in hackathons and coding competitions, and I'm seeking internship opportunities to apply my skills and contribute to impactful projects.",
-  education: [
-    {
-      school: "Raja Rajeswari College of Engineering",
-      degree: "BE, Computer Science and Engineering",
-      period: "2024 – 2028",
-      score: "CGPA: 9.8 / 10.0",
-    },
-    {
-      school: "RNS PU College",
-      degree: "Pre-University (PCMC)",
-      period: "2022 – 2024",
-      score: "95.6%",
-    },
-    {
-      school: "BET Convent School",
-      degree: "Secondary School",
-      period: "2021 – 2022",
-      score: "98.4%",
-    },
-  ],
+    "Hi, I'm Shravani K, a Computer Science Engineering student at RajaRajeswari College of Engineering with a strong interest in technology, software development, and artificial intelligence. I enjoy learning new concepts, solving problems, and continuously improving my technical skills.\n\nCurrently, I am expanding my knowledge in programming, web technologies, machine learning, and cloud computing while building a solid foundation in computer science fundamentals. I am passionate about exploring emerging technologies and staying updated with industry trends.\n\nMy goal is to grow as a software engineer, contribute to innovative solutions, and make a meaningful impact through technology. I believe in continuous learning, curiosity, and embracing challenges as opportunities for growth.",
+  education: [],
   projects: [
     {
       name: "SentimentScope",

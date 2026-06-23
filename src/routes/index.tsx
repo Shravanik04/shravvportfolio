@@ -30,10 +30,6 @@ export const Route = createFileRoute("/")({
           email: `mailto:${siteData.email}`,
           telephone: siteData.phone,
           jobTitle: siteData.role,
-          alumniOf: siteData.education.map((e) => ({
-            "@type": "EducationalOrganization",
-            name: e.school,
-          })),
         }),
       },
     ],
@@ -101,32 +97,53 @@ function Hero() {
     <section className="relative overflow-hidden">
       <div className="paper-grid absolute inset-0 opacity-60 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
       <div className="relative mx-auto max-w-6xl px-6 pb-20 pt-20 md:pt-32">
-        <span className="chip">
-          <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-          Available for internships · {siteData.location}
-        </span>
-        <h1 className="mt-6 font-display text-5xl leading-[1.05] md:text-7xl">
-          Hi, I'm {siteData.name.split(" ")[0]}.
-          <br />
-          <span className="text-muted-foreground">
-            I build with code, curiosity, and{" "}
-            <em className="text-primary not-italic">care</em>.
-          </span>
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{siteData.tagline}</p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a
-            href="#work"
-            className="inline-flex items-center gap-1.5 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition hover:opacity-90"
-          >
-            See my work <ArrowUpRight className="h-4 w-4" />
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-1.5 rounded-full border border-border px-5 py-2.5 text-sm font-medium transition hover:bg-accent"
-          >
-            Get in touch
-          </a>
+        <div className="grid items-center gap-12 md:grid-cols-[1.4fr_1fr]">
+          <div>
+            <span className="chip">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+              Available for internships · {siteData.location}
+            </span>
+            <h1 className="mt-6 font-display text-5xl leading-[1.05] md:text-7xl">
+              Hi, I'm {siteData.name.split(" ")[0]}.
+              <br />
+              <span className="text-muted-foreground">
+                I build with code, curiosity, and{" "}
+                <em className="text-primary not-italic">care</em>.
+              </span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{siteData.tagline}</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#work"
+                className="inline-flex items-center gap-1.5 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+              >
+                See my work <ArrowUpRight className="h-4 w-4" />
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-1.5 rounded-full border border-border px-5 py-2.5 text-sm font-medium transition hover:bg-accent"
+              >
+                Get in touch
+              </a>
+            </div>
+          </div>
+
+          <div className="relative mx-auto w-full max-w-sm md:mx-0">
+            <div className="paper-grid absolute -inset-4 -z-10 rounded-3xl opacity-40" />
+            <div className="aspect-[4/5] overflow-hidden rounded-3xl border border-border bg-accent shadow-[0_30px_80px_-30px_oklch(0.62_0.18_32/0.35)]">
+              <img
+                src={siteData.photo}
+                alt={`Portrait of ${siteData.name}`}
+                className="h-full w-full object-cover"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).style.display = "none";
+                }}
+              />
+            </div>
+            <p className="mt-3 text-center text-xs text-muted-foreground">
+              Replace <code className="font-mono">/public/photo.jpg</code> with your photo
+            </p>
+          </div>
         </div>
 
         <dl className="mt-16 grid grid-cols-2 gap-6 border-t border-border pt-8 md:grid-cols-4">
@@ -174,29 +191,13 @@ function Section({
 }
 
 function About() {
+  const paragraphs = siteData.summary.split("\n\n");
   return (
     <Section id="about" eyebrow="01 — About" title="A student, a builder, a perpetual learner.">
-      <div className="grid gap-12 md:grid-cols-5">
-        <p className="md:col-span-3 text-lg leading-relaxed text-muted-foreground">
-          {siteData.summary}
-        </p>
-        <div className="md:col-span-2">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-            Education
-          </h3>
-          <ul className="mt-4 space-y-5">
-            {siteData.education.map((e) => (
-              <li key={e.school} className="border-l-2 border-primary/40 pl-4">
-                <div className="font-medium">{e.school}</div>
-                <div className="text-sm text-muted-foreground">{e.degree}</div>
-                <div className="mt-1 flex justify-between text-xs text-muted-foreground">
-                  <span>{e.period}</span>
-                  <span className="font-medium text-foreground">{e.score}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div className="max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
+        {paragraphs.map((para, i) => (
+          <p key={i}>{para}</p>
+        ))}
       </div>
     </Section>
   );

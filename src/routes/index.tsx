@@ -30,10 +30,6 @@ export const Route = createFileRoute("/")({
           email: `mailto:${siteData.email}`,
           telephone: siteData.phone,
           jobTitle: siteData.role,
-          alumniOf: siteData.education.map((e) => ({
-            "@type": "EducationalOrganization",
-            name: e.school,
-          })),
         }),
       },
     ],

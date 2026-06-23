@@ -280,9 +280,6 @@ function Projects() {
                   <Github className="h-4 w-4" /> Code
                 </a>
               )}
-              <a href="#" className="link-underline inline-flex items-center gap-1">
-                Live demo <ArrowUpRight className="h-4 w-4" />
-              </a>
             </div>
           </article>
         ))}

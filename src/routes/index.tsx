@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { siteData } from "@/data/site-data";
+import { motion } from "framer-motion";
 import { ArrowUpRight, Mail, Phone, MapPin, Github } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -128,22 +129,29 @@ function Hero() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-sm md:mx-0">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 24 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="relative mx-auto w-full max-w-sm md:mx-0"
+          >
             <div className="paper-grid absolute -inset-4 -z-10 rounded-3xl opacity-40" />
-            <div className="aspect-[4/5] overflow-hidden rounded-3xl border border-border bg-accent shadow-[0_30px_80px_-30px_oklch(0.62_0.18_32/0.35)]">
-              <img
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              className="aspect-[4/5] overflow-hidden rounded-3xl border border-border bg-accent shadow-[0_30px_80px_-30px_oklch(0.62_0.18_32/0.35)]"
+            >
+              <motion.img
                 src={siteData.photo}
                 alt={`Portrait of ${siteData.name}`}
                 className="h-full w-full object-cover"
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).style.display = "none";
-                }}
+                initial={{ scale: 1.1 }}
+                whileHover={{ scale: 1 }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               />
-            </div>
-            <p className="mt-3 text-center text-xs text-muted-foreground">
-              Replace <code className="font-mono">/public/photo.jpg</code> with your photo
-            </p>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
         <dl className="mt-16 grid grid-cols-2 gap-6 border-t border-border pt-8 md:grid-cols-4">

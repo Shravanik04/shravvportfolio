@@ -9,26 +9,7 @@ export const siteData = {
   photo: "/photo.jpg",
   summary:
     "Hi, I'm Shravani K, a Computer Science Engineering student at RajaRajeswari College of Engineering with a strong interest in technology, software development, and artificial intelligence. I enjoy learning new concepts, solving problems, and continuously improving my technical skills.\n\nCurrently, I am expanding my knowledge in programming, web technologies, machine learning, and cloud computing while building a solid foundation in computer science fundamentals. I am passionate about exploring emerging technologies and staying updated with industry trends.\n\nMy goal is to grow as a software engineer, contribute to innovative solutions, and make a meaningful impact through technology. I believe in continuous learning, curiosity, and embracing challenges as opportunities for growth.",
-  education: [
-    {
-      school: "Raja Rajeswari College of Engineering",
-      degree: "BE, Computer Science and Engineering",
-      period: "2024 – 2028",
-      score: "CGPA: 9.8 / 10.0",
-    },
-    {
-      school: "RNS PU College",
-      degree: "Pre-University (PCMC)",
-      period: "2022 – 2024",
-      score: "95.6%",
-    },
-    {
-      school: "BET Convent School",
-      degree: "Secondary School",
-      period: "2021 – 2022",
-      score: "98.4%",
-    },
-  ],
+  education: [],
   projects: [
     {
       name: "SentimentScope",

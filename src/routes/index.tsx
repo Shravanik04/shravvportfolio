@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { siteData } from "@/data/site-data";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Mail, Phone, MapPin, Github } from "lucide-react";
+import { ArrowUpRight, Mail, Phone, MapPin, Github, Linkedin, User, Briefcase, FileText } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,6 +55,7 @@ function Portfolio() {
         <Skills />
         <Activities />
         <Certifications />
+        <Resume />
         <Contact />
       </main>
       <Footer />
@@ -67,8 +68,17 @@ function Nav() {
     ["About", "#about"],
     ["Work", "#work"],
     ["Skills", "#skills"],
+    ["Resume", "#resume"],
     ["Contact", "#contact"],
   ] as const;
+
+  const socials = [
+    { icon: Github, href: siteData.github, label: "GitHub" },
+    { icon: Linkedin, href: siteData.linkedin, label: "LinkedIn" },
+    { icon: Mail, href: `mailto:${siteData.email}`, label: "Email" },
+    { icon: Phone, href: `tel:${siteData.phone.replace(/\s/g, "")}`, label: "Call" },
+  ] as const;
+
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
@@ -82,12 +92,23 @@ function Nav() {
             </a>
           ))}
         </nav>
-        <a
-          href={`mailto:${siteData.email}`}
-          className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-sm text-background transition hover:opacity-90"
-        >
-          Say hi <ArrowUpRight className="h-4 w-4" />
-        </a>
+        <div className="flex items-center gap-2">
+          {socials.map((item) => {
+            const Icon = item.icon;
+            return (
+              <a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card/50 text-muted-foreground transition-all duration-300 hover:border-primary/40 hover:bg-accent hover:text-primary hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)]"
+                aria-label={item.label}
+              >
+                <Icon className="h-4.5 w-4.5" />
+              </a>
+            );
+          })}
+        </div>
       </div>
     </header>
   );
@@ -130,43 +151,34 @@ function Hero() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 24 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, y: 30, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{
+              duration: 1.1,
+              ease: [0.16, 1, 0.3, 1],
+              delay: 0.2
+            }}
             className="relative mx-auto w-full max-w-sm md:mx-0"
           >
             <div className="paper-grid absolute -inset-4 -z-10 rounded-3xl opacity-40" />
             <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="aspect-[4/5] overflow-hidden rounded-3xl border border-border bg-accent shadow-[0_30px_80px_-30px_oklch(0.62_0.18_32/0.35)]"
+              whileHover={{ y: -8, scale: 1.02 }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="aspect-[4/5] overflow-hidden rounded-3xl border border-border bg-accent shadow-[0_30px_80px_-30px_oklch(0.62_0.18_32/0.35)] transition-shadow duration-500 hover:shadow-[0_40px_90px_-20px_oklch(0.62_0.18_32/0.5)]"
             >
               <motion.img
                 src={siteData.photo}
                 alt={`Portrait of ${siteData.name}`}
                 className="h-full w-full object-cover"
-                initial={{ scale: 1.1 }}
-                whileHover={{ scale: 1 }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.08 }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               />
             </motion.div>
           </motion.div>
         </div>
 
-        <dl className="mt-16 grid grid-cols-2 gap-6 border-t border-border pt-8 md:grid-cols-4">
-          {[
-            ["CGPA", "9.8 / 10"],
-            ["Projects shipped", String(siteData.projects.length)],
-            ["Hackathons", "3+"],
-            ["Languages", "Py · C · C++"],
-          ].map(([k, v]) => (
-            <div key={k}>
-              <dt className="text-xs uppercase tracking-wider text-muted-foreground">{k}</dt>
-              <dd className="mt-1 font-display text-2xl">{v}</dd>
-            </div>
-          ))}
-        </dl>
+
       </div>
     </section>
   );
@@ -237,13 +249,17 @@ function Projects() {
               ))}
             </div>
             <div className="mt-6 flex gap-4 text-sm">
-              <a
-                href="#"
-                className="link-underline inline-flex items-center gap-1"
-                aria-label={`View ${p.name} on GitHub`}
-              >
-                <Github className="h-4 w-4" /> Code
-              </a>
+              {p.github && (
+                <a
+                  href={p.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-underline inline-flex items-center gap-1"
+                  aria-label={`View ${p.name} on GitHub`}
+                >
+                  <Github className="h-4 w-4" /> Code
+                </a>
+              )}
               <a href="#" className="link-underline inline-flex items-center gap-1">
                 Live demo <ArrowUpRight className="h-4 w-4" />
               </a>
@@ -320,9 +336,32 @@ function Certifications() {
   );
 }
 
+function Resume() {
+  return (
+    <Section id="resume" eyebrow="06 — Resume" title="My Professional Background.">
+      <div className="flex flex-col items-center justify-between gap-8 rounded-2xl border border-border bg-card p-8 md:flex-row md:p-12">
+        <div className="space-y-3 text-center md:text-left">
+          <h3 className="font-display text-2xl md:text-3xl">Curriculum Vitae</h3>
+          <p className="max-w-xl text-muted-foreground">
+            Download my full resume to view details about my education, coursework, project experience, and technical skills.
+          </p>
+        </div>
+        <a
+          href="/shravvresume.pdf"
+          download="shravvresume.pdf"
+          className="inline-flex items-center gap-2.5 rounded-full bg-primary px-8 py-4 font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 hover:shadow-[0_12px_24px_-10px_oklch(0.62_0.18_32/0.3)] hover:-translate-y-0.5"
+        >
+          <FileText className="h-5 w-5" />
+          Download Resume
+        </a>
+      </div>
+    </Section>
+  );
+}
+
 function Contact() {
   return (
-    <Section id="contact" eyebrow="06 — Contact" title="Let's build something together.">
+    <Section id="contact" eyebrow="07 — Contact" title="Let's build something together.">
       <div className="grid gap-10 md:grid-cols-2">
         <div>
           <p className="text-lg text-muted-foreground">

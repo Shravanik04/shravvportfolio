@@ -1,4 +1,4 @@
-import photoAsset from "@/assets/shravani-photo.jpg.asset.json";
+import photoAsset from "@/assets/shravani-photo.jpg";
 
 export const siteData = {
   name: "Shravani Kumar",
@@ -8,7 +8,9 @@ export const siteData = {
   email: "shravanikumar2006@gmail.com",
   phone: "+91 8660377945",
   location: "Bengaluru, India",
-  photo: photoAsset.url,
+  github: "https://github.com/Shravanik04",
+  linkedin: "https://www.linkedin.com/in/shravani-k-shrivatsa-b202a537a",
+  photo: photoAsset,
   summary:
     "Hi, I'm Shravani K, a Computer Science Engineering student at RajaRajeswari College of Engineering with a strong interest in technology, software development, and artificial intelligence. I enjoy learning new concepts, solving problems, and continuously improving my technical skills.\n\nCurrently, I am expanding my knowledge in programming, web technologies, machine learning, and cloud computing while building a solid foundation in computer science fundamentals. I am passionate about exploring emerging technologies and staying updated with industry trends.\n\nMy goal is to grow as a software engineer, contribute to innovative solutions, and make a meaningful impact through technology. I believe in continuous learning, curiosity, and embracing challenges as opportunities for growth.",
   education: [],
@@ -20,6 +22,7 @@ export const siteData = {
       description:
         "An AI-powered sentiment analysis app that classifies text into Positive, Negative, and Neutral categories. Includes preprocessing, prediction, and visualization, wrapped in an interactive UI.",
       tags: ["Python", "NLP", "Visualization", "Git"],
+      github: "https://github.com/Shravanik04/ai-sentiment-analyser",
     },
     {
       name: "ProjectPilotAI",
@@ -28,6 +31,7 @@ export const siteData = {
       description:
         "An AI-powered planning platform that generates complete project blueprints from a title, domain, team size, duration, and complexity — recommending tech stacks, datasets, tools, architecture, roadmaps, and learning resources.",
       tags: ["AI", "Recommendation", "Planning", "Full-stack"],
+      github: "https://github.com/Shravanik04/projectpilotai",
     },
   ],
   skills: {

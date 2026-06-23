@@ -170,29 +170,13 @@ function Section({
 }
 
 function About() {
+  const paragraphs = siteData.summary.split("\n\n");
   return (
     <Section id="about" eyebrow="01 — About" title="A student, a builder, a perpetual learner.">
-      <div className="grid gap-12 md:grid-cols-5">
-        <p className="md:col-span-3 text-lg leading-relaxed text-muted-foreground">
-          {siteData.summary}
-        </p>
-        <div className="md:col-span-2">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-            Education
-          </h3>
-          <ul className="mt-4 space-y-5">
-            {siteData.education.map((e) => (
-              <li key={e.school} className="border-l-2 border-primary/40 pl-4">
-                <div className="font-medium">{e.school}</div>
-                <div className="text-sm text-muted-foreground">{e.degree}</div>
-                <div className="mt-1 flex justify-between text-xs text-muted-foreground">
-                  <span>{e.period}</span>
-                  <span className="font-medium text-foreground">{e.score}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div className="max-w-3xl space-y-5 text-lg leading-relaxed text-muted-foreground">
+        {paragraphs.map((para, i) => (
+          <p key={i}>{para}</p>
+        ))}
       </div>
     </Section>
   );

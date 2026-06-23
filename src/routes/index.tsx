@@ -2,6 +2,26 @@ import { createFileRoute } from "@tanstack/react-router";
 import { siteData } from "@/data/site-data";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Mail, Phone, MapPin, Github, Linkedin, User, Briefcase, FileText } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
+import certTrigger from "@/assets/cert-trigger.jpg";
+import certUltron from "@/assets/cert-ultron.jpg";
+import certClaude from "@/assets/cert-claude.jpg";
+import certLuminus from "@/assets/cert-luminus.jpg";
+
+const certImages: Record<string, string> = {
+  "cert-trigger.jpg": certTrigger,
+  "cert-ultron.jpg": certUltron,
+  "cert-claude.jpg": certClaude,
+  "cert-luminus.jpg": certLuminus,
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -319,18 +339,55 @@ function Certifications() {
   return (
     <Section id="certs" eyebrow="05 — Certifications" title="Always picking up something new.">
       <div className="grid gap-4 md:grid-cols-2">
-        {siteData.certifications.map((c) => (
-          <div
-            key={c.name}
-            className="flex items-center justify-between rounded-xl border border-border bg-card p-6"
-          >
-            <div>
-              <div className="font-medium">{c.name}</div>
-              <div className="text-sm text-muted-foreground">{c.issuer}</div>
-            </div>
-            <ArrowUpRight className="h-5 w-5 text-muted-foreground" />
-          </div>
-        ))}
+        {siteData.certifications.map((c) => {
+          const imgUrl = certImages[c.imageName];
+          return (
+            <Dialog key={c.name}>
+              <DialogTrigger asChild>
+                <button
+                  className="group flex flex-col justify-between items-start rounded-xl border border-border bg-card p-6 text-left transition-all duration-300 hover:border-primary/40 hover:bg-accent/40 cursor-pointer hover:shadow-[0_12px_24px_-10px_oklch(0.62_0.18_32/0.15)]"
+                >
+                  <div className="flex w-full items-start justify-between">
+                    <div>
+                      <span className="chip mb-2 inline-block text-[10px] uppercase tracking-wider font-semibold bg-primary/10 text-primary border-primary/20">
+                        {c.type}
+                      </span>
+                      <h4 className="font-display text-lg mt-1 group-hover:text-primary transition-colors">
+                        {c.name}
+                      </h4>
+                      <p className="text-sm text-muted-foreground mt-0.5">{c.issuer}</p>
+                      <p className="text-xs text-muted-foreground/80 mt-2 line-clamp-2">
+                        {c.details}
+                      </p>
+                    </div>
+                    <ArrowUpRight className="h-5 w-5 text-muted-foreground/60 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
+                  </div>
+                  <div className="mt-4 flex items-center justify-between w-full text-xs text-muted-foreground border-t border-border/40 pt-3">
+                    <span>{c.date}</span>
+                    <span className="text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                      View Certificate
+                    </span>
+                  </div>
+                </button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto p-4 border-border bg-background shadow-2xl">
+                <DialogHeader className="pb-2">
+                  <DialogTitle className="font-display text-xl">{c.name}</DialogTitle>
+                  <DialogDescription className="text-sm">
+                    Issued by {c.issuer} · {c.date}
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="mt-2 aspect-[4/3] w-full overflow-hidden rounded-xl border border-border bg-accent shadow-inner">
+                  <img
+                    src={imgUrl}
+                    alt={`${c.name} certificate`}
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+              </DialogContent>
+            </Dialog>
+          );
+        })}
       </div>
     </Section>
   );

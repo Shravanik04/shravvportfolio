@@ -49,9 +49,40 @@ export const siteData = {
     "Built AI-focused projects exploring real-world use cases",
   ],
   certifications: [
-    { name: "Claude Code in Action", issuer: "Anthropic" },
+    {
+      name: "Solaris X Grand Hackathon",
+      issuer: "RNS Institute of Technology",
+      date: "April 8–9, 2026",
+      type: "Hackathon",
+      details: "24-hour high-intensity build marathon specializing in the track 'Developer Tools — Engineering Productivity' at Luminus 2026.",
+      imageName: "cert-luminus.jpg",
+    },
+    {
+      name: "TRIGGER 2K26 Hackathon",
+      issuer: "RajaRajeswari College of Engineering",
+      date: "May 7–8, 2026",
+      type: "Hackathon",
+      details: "24-hour hardware/software product building marathon organised by the Department of Computer Science and Engineering.",
+      imageName: "cert-trigger.jpg",
+    },
+    {
+      name: "ULTRON-25 Reverse Coding",
+      issuer: "RajaRajeswari College of Engineering",
+      date: "April 2026",
+      type: "Competition",
+      details: "Reverse Engineering and Coding Contest at the ULTRON-25 Technical Fest organized by the Department of AIML.",
+      imageName: "cert-ultron.jpg",
+    },
+    {
+      name: "Claude Code in Action",
+      issuer: "Anthropic",
+      date: "March 26, 2026",
+      type: "Certification",
+      details: "Hands-on certificate of completion for Anthropic's Claude Code practical training (Credential: psw483egerub).",
+      imageName: "cert-claude.jpg",
+    },
   ],
-  lastUpdated: "June 22, 2026",
+  lastUpdated: "June 23, 2026",
 };
 
 export type SiteData = typeof siteData;

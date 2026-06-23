@@ -1,3 +1,5 @@
+import photoAsset from "@/assets/shravani-photo.jpg.asset.json";
+
 export const siteData = {
   name: "Shravani Kumar",
   role: "Computer Science Student & Aspiring Frontend Developer",
@@ -6,7 +8,7 @@ export const siteData = {
   email: "shravanikumar2006@gmail.com",
   phone: "+91 8660377945",
   location: "Bengaluru, India",
-  photo: "/photo.jpg",
+  photo: photoAsset.url,
   summary:
     "Hi, I'm Shravani K, a Computer Science Engineering student at RajaRajeswari College of Engineering with a strong interest in technology, software development, and artificial intelligence. I enjoy learning new concepts, solving problems, and continuously improving my technical skills.\n\nCurrently, I am expanding my knowledge in programming, web technologies, machine learning, and cloud computing while building a solid foundation in computer science fundamentals. I am passionate about exploring emerging technologies and staying updated with industry trends.\n\nMy goal is to grow as a software engineer, contribute to innovative solutions, and make a meaningful impact through technology. I believe in continuous learning, curiosity, and embracing challenges as opportunities for growth.",
   education: [],

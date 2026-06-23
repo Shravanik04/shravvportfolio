@@ -64,6 +64,7 @@ export const siteData = {
       type: "Hackathon",
       details: "24-hour hardware/software product building marathon organised by the Department of Computer Science and Engineering.",
       imageName: "cert-trigger.jpg",
+      rotate: "90",
     },
     {
       name: "ULTRON-25 Reverse Coding",

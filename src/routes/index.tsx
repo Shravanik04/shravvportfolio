@@ -381,7 +381,16 @@ function Certifications() {
                   <img
                     src={imgUrl}
                     alt={`${c.name} certificate`}
-                    className="h-full w-full object-contain"
+                    className="h-full w-full object-contain transition-transform duration-300"
+                    style={
+                      c.rotate
+                        ? {
+                            transform: `rotate(${c.rotate}deg) scale(${
+                              c.rotate === "90" || c.rotate === "270" ? 0.75 : 1
+                            })`,
+                          }
+                        : undefined
+                    }
                   />
                 </div>
               </DialogContent>

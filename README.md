@@ -10,7 +10,7 @@ This portfolio showcases professional projects, technical skills, coursework hig
 
 - **🚀 Premium Design & Aesthetics**: Clean typography, glassmorphism, responsive grids, and customized color palettes in the OKLCH color space.
 - **🎨 Modern Animations**: Decelerated entrance transitions (deceleration curve cubic-bezier `[0.16, 1, 0.3, 1]`) and interactive hover-based card lifts and image zooms.
-- **🌐 Header Navigation Social Integration**: Quick-redirect icons directly built into the sticky top navigation header:
+- **🌐 Navigation & Social Integration**: Double-ended navigation bars (sticky header & footer) featuring quick links (Home, About, Work, Skills & Certificates, Resume, Contact) and social redirect controls:
   - **GitHub** (Opens profile in new tab)
   - **LinkedIn** (Opens profile in new tab)
   - **Email** (Initiates `mailto:` link)

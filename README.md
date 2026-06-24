@@ -16,8 +16,9 @@ This portfolio showcases professional projects, technical skills, coursework hig
   - **Email** (Initiates `mailto:` link)
   - **Call** (Initiates telephone link)
 - **📁 Selected Projects**: Spotlights main projects with direct links to their repositories (e.g., SentimentScope, ProjectPilotAI).
+- **🛠️ Integrated Brand Skills & Certifications**: Combined Skills & Certifications section utilizing official brand logo icons (VS Code, Python, C, C++, Git, GitHub) and interactive fallback indicators.
 - **🏆 Interactive Certifications Dialog**: Modal popup viewer for hackathons, contests, and courses, complete with support for custom image rotation orientations (e.g., 90-degree clockwise correction for the ULTRON-25 certificate).
-- **📄 Downloadable Resume**: A dedicated resume download module configured for direct downloading of the student's curriculum vitae (`shravvresume.pdf`).
+- **📄 Downloadable Resume**: A dedicated resume download module configured for direct downloading of the student's curriculum vitae (`resume.pdf`).
 - **📨 Contact Mailer Form**: Fully functional contact form that prepares and pre-fills mail drafts to the receiver's address.
 
 ---
@@ -38,7 +39,7 @@ This portfolio showcases professional projects, technical skills, coursework hig
 ```text
 student-port-generator/
 ├── public/
-│   └── shravvresume.pdf      # Resume download file
+│   └── resume.pdf            # Resume download file
 ├── src/
 │   ├── assets/               # Image/photo assets
 │   ├── components/           # UI elements & custom navigation components
@@ -98,7 +99,7 @@ export const siteData = {
 ```
 
 ### 2. Replacing the Resume PDF
-Replace the file located in `public/shravvresume.pdf` with your updated resume PDF.
+Replace the file located in `public/resume.pdf` with your updated resume PDF.
 
 ### 3. Replacing the Portrait Image
 Place your portrait photo inside `src/assets/shravani-photo.jpg` to replace the default profile photo.

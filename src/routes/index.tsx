@@ -149,7 +149,6 @@ function Portfolio() {
         <About />
         <Projects />
         <SkillsAndCertifications />
-        <Activities />
         <Resume />
         <Contact />
       </main>
@@ -372,33 +371,56 @@ function Projects() {
 
 function SkillsAndCertifications() {
   return (
-    <Section id="skills" eyebrow="03 — Skills & Certifications" title="My Toolkit & Achievements.">
+    <Section id="skills" eyebrow="03 — Skills & Certificates" title="My Toolkit & Highlights.">
       <div className="space-y-16">
-        <div>
-          <h3 className="font-display text-2xl mb-6 text-muted-foreground/90">Technical Toolkit</h3>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {Object.entries(siteData.skills).map(([group, items]) => (
-              <div key={group} className="rounded-xl border border-border bg-card p-6 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.05)] transition-shadow duration-300">
-                <h4 className="text-sm font-semibold uppercase tracking-wider text-primary">
-                  {group}
-                </h4>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {items.map((s) => {
-                    const Icon = getSkillIcon(s);
-                    return (
-                      <li key={s} className="chip group/skill transition-all duration-300 hover:border-primary/40 hover:bg-accent/40">
-                        {Icon}
-                        <span>{s}</span>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            ))}
+        <div className="grid gap-12 lg:grid-cols-12 items-start">
+          {/* Left Column: Technical Toolkit */}
+          <div className="lg:col-span-7">
+            <h3 className="font-display text-2xl mb-6 text-muted-foreground/90">Technical Toolkit</h3>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {Object.entries(siteData.skills).map(([group, items]) => (
+                <div key={group} className="rounded-xl border border-border bg-card p-5 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.05)] transition-shadow duration-300">
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-primary">
+                    {group}
+                  </h4>
+                  <ul className="mt-3 flex flex-wrap gap-1.5">
+                    {items.map((s) => {
+                      const Icon = getSkillIcon(s);
+                      return (
+                        <li key={s} className="chip group/skill transition-all duration-300 hover:border-primary/40 hover:bg-accent/40 text-[11px] py-1 px-2.5">
+                          {Icon}
+                          <span>{s}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column: Hackathons & Highlights */}
+          <div className="lg:col-span-5">
+            <h3 className="font-display text-2xl mb-6 text-muted-foreground/90">Hackathons & Highlights</h3>
+            <ul className="grid gap-3">
+              {siteData.activities.map((a) => (
+                <li
+                  key={a}
+                  className="flex items-start gap-3 rounded-lg border border-border bg-card px-4 py-3 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.05)] transition-shadow duration-300"
+                >
+                  <span
+                    aria-hidden
+                    className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-primary"
+                  />
+                  <span className="text-sm leading-relaxed">{a}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        <div>
+        {/* Certifications Block */}
+        <div className="pt-16 border-t border-border/40">
           <h3 className="font-display text-2xl mb-6 text-muted-foreground/90">Certifications</h3>
           <div className="grid gap-4 md:grid-cols-2">
             {siteData.certifications.map((c) => {
@@ -462,27 +484,6 @@ function SkillsAndCertifications() {
           </div>
         </div>
       </div>
-    </Section>
-  );
-}
-
-function Activities() {
-  return (
-    <Section id="activities" eyebrow="Beyond class" title="Hackathons & highlights.">
-      <ul className="grid gap-3 md:grid-cols-2">
-        {siteData.activities.map((a) => (
-          <li
-            key={a}
-            className="flex items-start gap-3 rounded-lg border border-border bg-card px-4 py-3"
-          >
-            <span
-              aria-hidden
-              className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-primary"
-            />
-            <span className="text-sm">{a}</span>
-          </li>
-        ))}
-      </ul>
     </Section>
   );
 }

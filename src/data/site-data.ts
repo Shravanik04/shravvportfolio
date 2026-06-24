@@ -4,7 +4,7 @@ export const siteData = {
   name: "Shravani Kumar",
   role: "Computer Science Student & Aspiring Frontend Developer",
   tagline:
-    "Building thoughtful interfaces and exploring AI, ML, and emerging tech — one project at a time.",
+    "Transforming concepts into scalable solutions with AI and modern technologies.",
   email: "shravanikumar2006@gmail.com",
   phone: "+91 8660377945",
   location: "Bengaluru, India",

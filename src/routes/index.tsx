@@ -160,6 +160,7 @@ function Portfolio() {
 
 function Nav() {
   const links = [
+    ["Home", "#"],
     ["About", "#about"],
     ["Work", "#work"],
     ["Skills & Certificates", "#skills"],
@@ -467,7 +468,7 @@ function SkillsAndCertifications() {
 
 function Activities() {
   return (
-    <Section id="activities" eyebrow="04 — Beyond class" title="Hackathons & highlights.">
+    <Section id="activities" eyebrow="Beyond class" title="Hackathons & highlights.">
       <ul className="grid gap-3 md:grid-cols-2">
         {siteData.activities.map((a) => (
           <li
@@ -490,7 +491,7 @@ function Activities() {
 
 function Resume() {
   return (
-    <Section id="resume" eyebrow="06 — Resume" title="My Professional Background.">
+    <Section id="resume" eyebrow="04 — Resume" title="My Professional Background.">
       <div className="flex flex-col items-center justify-between gap-8 rounded-2xl border border-border bg-card p-8 md:flex-row md:p-12">
         <div className="space-y-3 text-center md:text-left">
           <h3 className="font-display text-2xl md:text-3xl">Curriculum Vitae</h3>
@@ -513,7 +514,7 @@ function Resume() {
 
 function Contact() {
   return (
-    <Section id="contact" eyebrow="07 — Contact" title="Let's build something together.">
+    <Section id="contact" eyebrow="05 — Contact" title="Let's build something together.">
       <div className="grid gap-10 md:grid-cols-2">
         <div>
           <p className="text-lg text-muted-foreground">
@@ -612,6 +613,7 @@ function Contact() {
 
 function Footer() {
   const links = [
+    ["Home", "#"],
     ["About", "#about"],
     ["Work", "#work"],
     ["Skills & Certificates", "#skills"],

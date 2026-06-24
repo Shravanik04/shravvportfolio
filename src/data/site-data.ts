@@ -29,7 +29,7 @@ export const siteData = {
       subtitle: "AI Project Planner",
       year: "2026",
       description:
-        "An AI-powered planning platform that generates complete project blueprints from a title, domain, team size, duration, and complexity — recommending tech stacks, datasets, tools, architecture, roadmaps, and learning resources.",
+        "Engineered a full-stack AI platform that helps students identify skill gaps, discover high-impact projects, and generate structured development plans aligned with career goals.",
       tags: ["AI", "Recommendation", "Planning", "Full-stack"],
       github: "https://github.com/Shravanik04/projectpilotai",
     },

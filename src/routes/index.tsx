@@ -1,7 +1,35 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { siteData } from "@/data/site-data";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Mail, Phone, MapPin, Github, Linkedin, User, Briefcase, FileText } from "lucide-react";
+import {
+  ArrowUpRight,
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
+  User,
+  Briefcase,
+  FileText,
+  Terminal,
+  Cpu,
+  Code2,
+  GitBranch,
+  Laptop,
+  Rocket,
+  Network,
+  Box,
+  Lightbulb,
+  Bot,
+  Brain,
+  Globe,
+  Users,
+  MessageSquare,
+  Trophy,
+  Compass,
+  Smile,
+  Sparkles
+} from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -10,6 +38,54 @@ import {
   DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog";
+
+function getSkillIcon(skill: string): React.ReactNode {
+  const s = skill.toLowerCase();
+  
+  // Real Brand Logos
+  if (s.includes("python")) {
+    return <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" className="h-3.5 w-3.5 object-contain" />;
+  }
+  if (s === "c") {
+    return <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" className="h-3.5 w-3.5 object-contain" />;
+  }
+  if (s.includes("c++")) {
+    return <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" className="h-3.5 w-3.5 object-contain" />;
+  }
+  if (s === "git") {
+    return <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" className="h-3.5 w-3.5 object-contain" />;
+  }
+  if (s === "github") {
+    return <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" className="h-3.5 w-3.5 object-contain dark:invert" />;
+  }
+  if (s.includes("vs code")) {
+    return <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" className="h-3.5 w-3.5 object-contain" />;
+  }
+
+  // Lucide fallbacks
+  let IconComponent = Code2;
+  if (s.includes("antigravity")) IconComponent = Rocket;
+  else if (s.includes("data structures")) IconComponent = Network;
+  else if (s.includes("oop")) IconComponent = Box;
+  else if (s.includes("problem solving")) IconComponent = Lightbulb;
+  else if (s === "ai") IconComponent = Bot;
+  else if (s === "ml") IconComponent = Brain;
+  else if (s.includes("software development")) IconComponent = Laptop;
+  else if (s.includes("web development")) IconComponent = Globe;
+  else if (s.includes("teamwork")) IconComponent = Users;
+  else if (s.includes("communication")) IconComponent = MessageSquare;
+  else if (s.includes("leadership")) IconComponent = Trophy;
+  else if (s.includes("critical thinking")) IconComponent = Compass;
+
+  return <IconComponent className="h-3.5 w-3.5 text-primary/70 group-hover/skill:text-primary transition-colors" />;
+}
+
+function getProjectIcon(name: string) {
+  const s = name.toLowerCase();
+  if (s.includes("sentiment")) return Smile;
+  if (s.includes("pilot") || s.includes("planner")) return Sparkles;
+  return Sparkles;
+}
 
 import certTrigger from "@/assets/cert-trigger.jpg";
 import certUltron from "@/assets/cert-ultron.jpg";
@@ -72,9 +148,8 @@ function Portfolio() {
         <Hero />
         <About />
         <Projects />
-        <Skills />
+        <SkillsAndCertifications />
         <Activities />
-        <Certifications />
         <Resume />
         <Contact />
       </main>
@@ -87,7 +162,7 @@ function Nav() {
   const links = [
     ["About", "#about"],
     ["Work", "#work"],
-    ["Skills", "#skills"],
+    ["Skills & Certificates", "#skills"],
     ["Resume", "#resume"],
     ["Contact", "#contact"],
   ] as const;
@@ -258,7 +333,13 @@ function Projects() {
               </span>
               <span className="chip">{p.year}</span>
             </div>
-            <h3 className="mt-6 font-display text-2xl">{p.name}</h3>
+            <h3 className="mt-6 font-display text-2xl group-hover:text-primary transition-colors flex items-center gap-2">
+              {p.name}
+              {(() => {
+                const ProjectIcon = getProjectIcon(p.name);
+                return <ProjectIcon className="h-5 w-5 text-primary/80 group-hover:text-primary transition-colors" />;
+              })()}
+            </h3>
             <p className="mt-1 text-sm text-primary">{p.subtitle}</p>
             <p className="mt-4 flex-1 text-muted-foreground">{p.description}</p>
             <div className="mt-6 flex flex-wrap gap-2">
@@ -288,24 +369,97 @@ function Projects() {
   );
 }
 
-function Skills() {
+function SkillsAndCertifications() {
   return (
-    <Section id="skills" eyebrow="03 — Toolkit" title="What I work with.">
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {Object.entries(siteData.skills).map(([group, items]) => (
-          <div key={group} className="rounded-xl border border-border bg-card p-6">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-primary">
-              {group}
-            </h3>
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {items.map((s) => (
-                <li key={s} className="chip">
-                  {s}
-                </li>
-              ))}
-            </ul>
+    <Section id="skills" eyebrow="03 — Skills & Certifications" title="My Toolkit & Achievements.">
+      <div className="space-y-16">
+        <div>
+          <h3 className="font-display text-2xl mb-6 text-muted-foreground/90">Technical Toolkit</h3>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {Object.entries(siteData.skills).map(([group, items]) => (
+              <div key={group} className="rounded-xl border border-border bg-card p-6 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.05)] transition-shadow duration-300">
+                <h4 className="text-sm font-semibold uppercase tracking-wider text-primary">
+                  {group}
+                </h4>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {items.map((s) => {
+                    const Icon = getSkillIcon(s);
+                    return (
+                      <li key={s} className="chip group/skill transition-all duration-300 hover:border-primary/40 hover:bg-accent/40">
+                        {Icon}
+                        <span>{s}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        <div>
+          <h3 className="font-display text-2xl mb-6 text-muted-foreground/90">Certifications</h3>
+          <div className="grid gap-4 md:grid-cols-2">
+            {siteData.certifications.map((c) => {
+              const imgUrl = certImages[c.imageName];
+              return (
+                <Dialog key={c.name}>
+                  <DialogTrigger asChild>
+                    <button
+                      className="group flex flex-col justify-between items-start rounded-xl border border-border bg-card p-6 text-left transition-all duration-300 hover:border-primary/40 hover:bg-accent/40 cursor-pointer hover:shadow-[0_12px_24px_-10px_oklch(0.62_0.18_32/0.15)] w-full"
+                    >
+                      <div className="flex w-full items-start justify-between">
+                        <div>
+                          <span className="chip mb-2 inline-block text-[10px] uppercase tracking-wider font-semibold bg-primary/10 text-primary border-primary/20">
+                            {c.type}
+                          </span>
+                          <h4 className="font-display text-lg mt-1 group-hover:text-primary transition-colors">
+                            {c.name}
+                          </h4>
+                          <p className="text-sm text-muted-foreground mt-0.5">{c.issuer}</p>
+                          <p className="text-xs text-muted-foreground/80 mt-2 line-clamp-2">
+                            {c.details}
+                          </p>
+                        </div>
+                        <ArrowUpRight className="h-5 w-5 text-muted-foreground/60 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
+                      </div>
+                      <div className="mt-4 flex items-center justify-between w-full text-xs text-muted-foreground border-t border-border/40 pt-3">
+                        <span>{c.date}</span>
+                        <span className="text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                          View Certificate
+                        </span>
+                      </div>
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto p-4 border-border bg-background shadow-2xl">
+                    <DialogHeader className="pb-2">
+                      <DialogTitle className="font-display text-xl">{c.name}</DialogTitle>
+                      <DialogDescription className="text-sm">
+                        Issued by {c.issuer} · {c.date}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="mt-2 aspect-[4/3] w-full overflow-hidden rounded-xl border border-border bg-accent shadow-inner">
+                      <img
+                        src={imgUrl}
+                        alt={`${c.name} certificate`}
+                        className="h-full w-full object-contain transition-transform duration-300"
+                        style={
+                          c.rotate
+                            ? {
+                                transform: `rotate(${c.rotate}deg) scale(${
+                                  c.rotate === "90" || c.rotate === "270" ? 0.75 : 1
+                                })`,
+                              }
+                            : undefined
+                        }
+                      />
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </Section>
   );
@@ -332,72 +486,7 @@ function Activities() {
   );
 }
 
-function Certifications() {
-  return (
-    <Section id="certs" eyebrow="05 — Certifications" title="Always picking up something new.">
-      <div className="grid gap-4 md:grid-cols-2">
-        {siteData.certifications.map((c) => {
-          const imgUrl = certImages[c.imageName];
-          return (
-            <Dialog key={c.name}>
-              <DialogTrigger asChild>
-                <button
-                  className="group flex flex-col justify-between items-start rounded-xl border border-border bg-card p-6 text-left transition-all duration-300 hover:border-primary/40 hover:bg-accent/40 cursor-pointer hover:shadow-[0_12px_24px_-10px_oklch(0.62_0.18_32/0.15)]"
-                >
-                  <div className="flex w-full items-start justify-between">
-                    <div>
-                      <span className="chip mb-2 inline-block text-[10px] uppercase tracking-wider font-semibold bg-primary/10 text-primary border-primary/20">
-                        {c.type}
-                      </span>
-                      <h4 className="font-display text-lg mt-1 group-hover:text-primary transition-colors">
-                        {c.name}
-                      </h4>
-                      <p className="text-sm text-muted-foreground mt-0.5">{c.issuer}</p>
-                      <p className="text-xs text-muted-foreground/80 mt-2 line-clamp-2">
-                        {c.details}
-                      </p>
-                    </div>
-                    <ArrowUpRight className="h-5 w-5 text-muted-foreground/60 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
-                  </div>
-                  <div className="mt-4 flex items-center justify-between w-full text-xs text-muted-foreground border-t border-border/40 pt-3">
-                    <span>{c.date}</span>
-                    <span className="text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                      View Certificate
-                    </span>
-                  </div>
-                </button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-[700px] max-h-[90vh] overflow-y-auto p-4 border-border bg-background shadow-2xl">
-                <DialogHeader className="pb-2">
-                  <DialogTitle className="font-display text-xl">{c.name}</DialogTitle>
-                  <DialogDescription className="text-sm">
-                    Issued by {c.issuer} · {c.date}
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="mt-2 aspect-[4/3] w-full overflow-hidden rounded-xl border border-border bg-accent shadow-inner">
-                  <img
-                    src={imgUrl}
-                    alt={`${c.name} certificate`}
-                    className="h-full w-full object-contain transition-transform duration-300"
-                    style={
-                      c.rotate
-                        ? {
-                            transform: `rotate(${c.rotate}deg) scale(${
-                              c.rotate === "90" || c.rotate === "270" ? 0.75 : 1
-                            })`,
-                          }
-                        : undefined
-                    }
-                  />
-                </div>
-              </DialogContent>
-            </Dialog>
-          );
-        })}
-      </div>
-    </Section>
-  );
-}
+
 
 function Resume() {
   return (
@@ -410,8 +499,8 @@ function Resume() {
           </p>
         </div>
         <a
-          href="/shravvresume.pdf"
-          download="shravvresume.pdf"
+          href="/resume.pdf"
+          download="resume.pdf"
           className="inline-flex items-center gap-2.5 rounded-full bg-primary px-8 py-4 font-medium text-primary-foreground transition-all duration-300 hover:opacity-90 hover:shadow-[0_12px_24px_-10px_oklch(0.62_0.18_32/0.3)] hover:-translate-y-0.5"
         >
           <FileText className="h-5 w-5" />
@@ -447,6 +536,28 @@ function Contact() {
             <li className="flex items-center gap-3">
               <MapPin className="h-4 w-4 text-primary" />
               <span>{siteData.location}</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <Github className="h-4 w-4 text-primary" />
+              <a 
+                className="link-underline" 
+                href={siteData.github} 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                GitHub — Shravani Kumar
+              </a>
+            </li>
+            <li className="flex items-center gap-3">
+              <Linkedin className="h-4 w-4 text-primary" />
+              <a 
+                className="link-underline" 
+                href={siteData.linkedin} 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                LinkedIn — Shravani Kumar
+              </a>
             </li>
           </ul>
         </div>
@@ -500,13 +611,34 @@ function Contact() {
 }
 
 function Footer() {
+  const links = [
+    ["About", "#about"],
+    ["Work", "#work"],
+    ["Skills & Certificates", "#skills"],
+    ["Resume", "#resume"],
+    ["Contact", "#contact"],
+  ] as const;
+
   return (
-    <footer className="border-t border-border">
-      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-6 py-10 text-sm text-muted-foreground md:flex-row md:items-center">
-        <p>
-          © {new Date().getFullYear()} {siteData.name}. Crafted with care.
-        </p>
-        <p>Last updated {siteData.lastUpdated}</p>
+    <footer className="border-t border-border bg-card/10">
+      <div className="mx-auto max-w-6xl px-6 py-12">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between border-b border-border/40 pb-8 mb-8">
+          <a href="#" className="font-display text-lg tracking-tight">
+            Shravani<span className="text-primary">.</span>
+          </a>
+          <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium text-muted-foreground">
+            {links.map(([label, href]) => (
+              <a key={href} href={href} className="link-underline hover:text-foreground transition-colors">
+                {label}
+              </a>
+            ))}
+          </nav>
+        </div>
+        <div className="flex flex-col items-start justify-between gap-4 text-xs text-muted-foreground md:flex-row md:items-center">
+          <p>
+            © {new Date().getFullYear()} {siteData.name}. Crafted with care.
+          </p>
+        </div>
       </div>
     </footer>
   );

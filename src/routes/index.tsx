@@ -469,6 +469,25 @@ function About() {
 }
 
 function Projects() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut" },
+    },
+  };
+
   return (
     <Section id="work" eyebrow="02 — Projects" title="Things I've been building.">
       <div className="grid gap-8 lg:grid-cols-3">
@@ -477,11 +496,11 @@ function Projects() {
           return (
             <motion.article
               key={p.name}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ y: -6 }}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
               className="group relative flex flex-col rounded-2xl border border-border bg-card overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-[0_24px_50px_-15px_oklch(0.62_0.18_32/0.2)]"
             >
               {/* Media Thumbnail Container */}
@@ -490,14 +509,14 @@ function Projects() {
                   <img
                     src={imgUrl}
                     alt={`${p.name} dashboard mockup`}
-                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover/media:scale-102"
+                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
               )}
 
               {/* Card Content */}
               <div className="flex flex-col flex-1 p-6">
-                <div className="flex items-start justify-between">
+                <motion.div variants={itemVariants} className="flex items-start justify-between">
                   <div>
                     <h3 className="font-display text-xl group-hover:text-primary transition-colors flex items-center gap-2">
                       {p.name}
@@ -509,13 +528,15 @@ function Projects() {
                     <p className="text-xs text-primary font-medium mt-0.5">{p.subtitle}</p>
                   </div>
                   <span className="chip text-[10px] py-0.5 px-2">{p.year}</span>
-                </div>
+                </motion.div>
 
-                <p className="mt-4 text-muted-foreground text-sm leading-relaxed flex-1">{p.description}</p>
+                <motion.p variants={itemVariants} className="mt-4 text-muted-foreground text-sm leading-relaxed flex-1">
+                  {p.description}
+                </motion.p>
 
                 {/* Project Highlights */}
                 {p.highlights && (
-                  <div className="mt-5">
+                  <motion.div variants={itemVariants} className="mt-5">
                     <h4 className="text-[10px] font-semibold uppercase tracking-wider text-foreground/80 mb-2">Key Highlights</h4>
                     <ul className="grid gap-1.5 grid-cols-1">
                       {p.highlights.map((h, idx) => (
@@ -525,33 +546,33 @@ function Projects() {
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </motion.div>
                 )}
 
                 {/* Metrics / Recruiter Impact Badge */}
                 {p.metrics && (
-                  <div className="mt-5 rounded-xl border border-primary/10 bg-primary/[0.02] px-3.5 py-2.5 flex items-center gap-2.5">
+                  <motion.div variants={itemVariants} className="mt-5 rounded-xl border border-primary/10 bg-primary/[0.02] px-3.5 py-2.5 flex items-center gap-2.5">
                     <Sparkles className="h-4 w-4 text-primary shrink-0 animate-pulse" />
                     <div>
                       <span className="block text-[9px] uppercase tracking-wider text-muted-foreground font-semibold leading-none">Measurable Impact</span>
                       <span className="text-xs font-semibold text-foreground mt-1 block">{p.metrics}</span>
                     </div>
-                  </div>
+                  </motion.div>
                 )}
 
                 {/* Tags */}
                 {p.tags && p.tags.length > 0 && (
-                  <div className="mt-5 flex flex-wrap gap-1">
+                  <motion.div variants={itemVariants} className="mt-5 flex flex-wrap gap-1">
                     {p.tags.map((t) => (
                       <span key={t} className="chip text-[9px] py-0.5 px-2">
                         {t}
                       </span>
                     ))}
-                  </div>
+                  </motion.div>
                 )}
 
                 {/* Action Links */}
-                <div className="mt-6 pt-4 border-t border-border/40 flex items-center justify-between text-sm">
+                <motion.div variants={itemVariants} className="mt-6 pt-4 border-t border-border/40 flex items-center justify-between text-sm">
                   {p.github && (
                     <a
                       href={p.github}
@@ -565,7 +586,7 @@ function Projects() {
                       <ArrowUpRight className="h-3 w-3 opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-all" />
                     </a>
                   )}
-                </div>
+                </motion.div>
               </div>
             </motion.article>
           );
@@ -576,6 +597,31 @@ function Projects() {
 }
 
 function Skills() {
+  const containerVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.05,
+        duration: 0.5,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 8 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        duration: 0.3,
+        ease: "easeOut"
+      } 
+    },
+  };
+
   return (
     <Section id="skills" eyebrow="03 — Skills & Certificates" title="My Technical Toolkit.">
       <div className="rounded-2xl border border-border bg-card/30 p-6 md:p-8 backdrop-blur-sm shadow-[0_4px_25px_rgba(0,0,0,0.02)]">
@@ -583,28 +629,42 @@ function Skills() {
           {Object.entries(siteData.skills).map(([group, items], i) => (
             <motion.div
               key={group}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ y: -4 }}
-              className="rounded-xl border border-border bg-card p-5 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.05)] hover:border-primary/20 transition-all duration-300 flex flex-col justify-between"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              className={`rounded-xl border border-border bg-card p-5 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.05)] hover:border-primary/20 transition-all duration-300 flex flex-col justify-between ${
+                i === 4 ? "col-span-2 md:col-span-2 xl:col-span-1" : ""
+              }`}
             >
               <div>
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-primary">
+                <motion.h4 
+                  variants={itemVariants}
+                  className="text-xs font-semibold uppercase tracking-wider text-primary"
+                >
                   {group}
-                </h4>
-                <ul className="mt-3 flex flex-wrap gap-1.5">
+                </motion.h4>
+                <motion.ul 
+                  variants={containerVariants}
+                  className="mt-3 flex flex-wrap gap-1.5"
+                >
                   {items.map((s) => {
                     const Icon = getSkillIcon(s);
                     return (
-                      <li key={s} className="chip group/skill transition-all duration-300 hover:border-primary/40 hover:bg-accent/40 text-[11px] py-1 px-2.5">
+                      <motion.li
+                        key={s}
+                        variants={itemVariants}
+                        whileHover={{ scale: 1.06, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="chip group/skill transition-all duration-300 hover:border-primary/40 hover:bg-accent/40 text-[11px] py-1 px-2.5 cursor-pointer select-none"
+                      >
                         {Icon}
                         <span>{s}</span>
-                      </li>
+                      </motion.li>
                     );
                   })}
-                </ul>
+                </motion.ul>
               </div>
             </motion.div>
           ))}
@@ -925,7 +985,7 @@ function Footer() {
         </div>
         <div className="flex flex-col items-center justify-between gap-4 text-xs text-muted-foreground md:flex-row md:items-center">
           <p className="text-center md:text-left">
-            © {new Date().getFullYear()} {siteData.name}. Crafted with care and Antigravity.
+            © {new Date().getFullYear()} {siteData.name}. Crafted with care.
           </p>
           <p className="text-muted-foreground/80 text-center md:text-left">
             Last Updated: {siteData.lastUpdated}

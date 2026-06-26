@@ -63,7 +63,7 @@ export const siteData = {
       subtitle: "Personal Brand & Showcase",
       year: "2026",
       description:
-        "Premium, responsive developer portfolio showcasing engineering projects, interactive certifications, and real-time GitHub activity statistics.",
+        "A modern, responsive developer portfolio website built to showcase my projects, technical skills, certifications, and achievements through an interactive and visually engaging interface. Designed with smooth animations, optimized performance, and a clean user experience, it serves as a central hub for my professional profile, resume, and contact information.",
       github: "https://github.com/Shravanik04/shravvportfolio",
       imageName: "portfolio-preview.png",
     },

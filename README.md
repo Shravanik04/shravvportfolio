@@ -16,8 +16,8 @@ This portfolio showcases professional projects, technical skills, coursework hig
   - **Email** (Initiates `mailto:` link)
   - **Call** (Initiates telephone link)
 - **📁 Selected Projects**: Spotlights main projects with direct links to their repositories (e.g., SentimentScope, ProjectPilotAI).
-- **🛠️ Integrated Brand Skills, Certifications & Highlights**: A unified section showcasing technical skills and achievements. On desktop screens, the **Technical Toolkit** and **Hackathons & Highlights** are displayed side-by-side in a responsive grid, with **Certifications** spanning full-width below them.
-- **🏆 Interactive Certifications Dialog**: Modal popup viewer for hackathons, contests, and courses, complete with support for custom image rotation orientations (e.g., 90-degree clockwise correction for the ULTRON-25 certificate).
+- **🛠️ Technical Toolkit & Skill Grid**: A full-width, responsive grid showing categorized languages, tools, concepts, interests, and soft skills with motion animations.
+- **🏆 Combined Hackathons & Certifications**: A unified, responsive grid showcasing contest awards, hackathons, and certifications. Cards representing certified achievements feature an interactive modal popup certificate viewer with support for custom image rotation orientations (e.g., 90-degree clockwise correction for the ULTRON-25 certificate).
 - **📄 Downloadable Resume**: A dedicated resume download module configured for direct downloading of the student's curriculum vitae (`resume.pdf`).
 - **📨 Contact Mailer Form**: Fully functional contact form that prepares and pre-fills mail drafts to the receiver's address.
 

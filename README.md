@@ -9,17 +9,15 @@ This portfolio showcases professional projects, technical skills, coursework hig
 ## ✨ Features
 
 - **🚀 Premium Design & Aesthetics**: Clean typography, glassmorphism, responsive grids, and customized color palettes in the OKLCH color space.
-- **🎨 Modern Animations**: Decelerated entrance transitions (deceleration curve cubic-bezier `[0.16, 1, 0.3, 1]`) and interactive hover-based card lifts and image zooms.
-- **🌐 Navigation & Social Integration**: Double-ended navigation bars (sticky header & footer) featuring quick links (Home, About, Work, Skills & Certificates, Resume, Contact) and social redirect controls:
-  - **GitHub** (Opens profile in new tab)
-  - **LinkedIn** (Opens profile in new tab)
-  - **Email** (Initiates `mailto:` link)
-  - **Call** (Initiates telephone link)
-- **📁 Selected Projects**: Spotlights main projects with direct links to their repositories (e.g., SentimentScope, ProjectPilotAI).
-- **🛠️ Technical Toolkit & Skill Grid**: A full-width, responsive grid showing categorized languages, tools, concepts, interests, and soft skills with motion animations.
-- **🏆 Combined Hackathons & Certifications**: A unified, responsive grid showcasing contest awards, hackathons, and certifications. Cards representing certified achievements feature an interactive modal popup certificate viewer with support for custom image rotation orientations (e.g., 90-degree clockwise correction for the ULTRON-25 certificate).
-- **📄 Downloadable Resume**: A dedicated resume download module configured for direct downloading of the student's curriculum vitae (`resume.pdf`).
-- **📨 Contact Mailer Form**: Fully functional contact form that prepares and pre-fills mail drafts to the receiver's address.
+- **🎨 Interactive Motion & Animations**: Staggered entrance animations for Skills and Projects, custom hover zoom effects (lifting cards and image scales), and tap/press micro-interactions for touch devices.
+- **🌐 Responsive Navigation & Socials**:
+  - **Desktop**: Clean sticky header and footer featuring quick navigation links and social icons.
+  - **Mobile & Tablet**: Accessible, sliding hamburger drawer menu (using Radix-UI/Sheet) containing vertical navigation links, socials, and resume downloads. Closes automatically on navigation.
+- **📁 Selected Projects**: Spotlights main projects with direct links to their repositories, staggered text entrance animations, and card hover scale effects.
+- **🛠️ Balanced Technical Toolkit**: A responsive grid showing categorized skills that balances gracefully across breakpoints (e.g., 2 columns on mobile, 3 columns on tablet/medium desktop, and 5 columns on large desktop) with staggered entrance animations.
+- **🏆 Combined Hackathons & Certifications**: A unified, responsive grid showcasing contest awards, hackathons, and certifications with an interactive certificate preview modal.
+- **📄 Downloadable Resume**: Dedicated download modules for the student's curriculum vitae (`resume.pdf`).
+- **📨 Contact Mailer Form**: Fully functional contact form that pre-fills email drafts to the receiver's address.
 
 ---
 

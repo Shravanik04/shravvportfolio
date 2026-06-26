@@ -35,7 +35,8 @@ import {
   BookOpen,
   GraduationCap,
   CheckCircle2,
-  ExternalLink
+  ExternalLink,
+  Menu
 } from "lucide-react";
 import {
   Dialog,
@@ -45,6 +46,14 @@ import {
   DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
 
 // Project mockups
 import sentimentscopeDashboard from "@/assets/sentimentscope-dashboard.png";
@@ -208,6 +217,8 @@ function Nav() {
         <a href="#" className="font-display text-xl tracking-tight">
           Shravani<span className="text-primary">.</span>
         </a>
+        
+        {/* Desktop Navigation */}
         <nav className="hidden gap-6 text-sm font-medium text-muted-foreground lg:flex">
           {links.map(([label, href]) => (
             <a key={href} href={href} className="link-underline hover:text-foreground transition-colors duration-200">
@@ -215,7 +226,9 @@ function Nav() {
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
+        
+        {/* Desktop Socials */}
+        <div className="hidden items-center gap-2 lg:flex">
           {socials.map((item) => {
             const Icon = item.icon;
             return (
@@ -231,6 +244,69 @@ function Nav() {
               </a>
             );
           })}
+        </div>
+
+        {/* Mobile Navigation Trigger */}
+        <div className="flex items-center lg:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <button
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card/50 text-muted-foreground transition-all duration-300 hover:border-primary/40 hover:bg-accent hover:text-primary cursor-pointer"
+                aria-label="Open navigation menu"
+              >
+                <Menu className="h-5 w-5" />
+              </button>
+            </SheetTrigger>
+            <SheetContent side="right" className="flex flex-col justify-between w-[280px] sm:w-[350px]">
+              <div>
+                <SheetHeader className="text-left pb-4 border-b border-border/40">
+                  <SheetTitle className="font-display text-xl">
+                    Shravani<span className="text-primary">.</span>
+                  </SheetTitle>
+                </SheetHeader>
+                <nav className="flex flex-col gap-4 mt-6">
+                  {links.map(([label, href]) => (
+                    <SheetClose asChild key={href}>
+                      <a
+                        href={href}
+                        className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                      >
+                        {label}
+                      </a>
+                    </SheetClose>
+                  ))}
+                </nav>
+              </div>
+              <div className="flex flex-col gap-6 border-t border-border/40 pt-6 pb-2">
+                <div className="flex items-center gap-3 justify-center">
+                  {socials.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <a
+                        key={item.label}
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card/50 text-muted-foreground transition-all duration-300 hover:border-primary/40 hover:bg-accent hover:text-primary"
+                        aria-label={item.label}
+                      >
+                        <Icon className="h-5 w-5" />
+                      </a>
+                    );
+                  })}
+                </div>
+                <SheetClose asChild>
+                  <a
+                    href="/resume.pdf"
+                    download="resume.pdf"
+                    className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground hover:opacity-90 transition-all text-center"
+                  >
+                    <Download className="h-4 w-4" /> Download Resume
+                  </a>
+                </SheetClose>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
@@ -265,7 +341,7 @@ function Hero() {
             </p>
             
             {/* Prominent Recruiter CTA Buttons */}
-            <div className="mt-8 flex flex-row flex-nowrap items-center gap-2.5 overflow-x-auto scrollbar-none pb-1 md:pb-0">
+            <div className="mt-8 flex flex-wrap items-center gap-2.5">
               <a
                 href="/resume.pdf"
                 download="resume.pdf"
@@ -503,7 +579,7 @@ function Skills() {
   return (
     <Section id="skills" eyebrow="03 — Skills & Certificates" title="My Technical Toolkit.">
       <div className="rounded-2xl border border-border bg-card/30 p-6 md:p-8 backdrop-blur-sm shadow-[0_4px_25px_rgba(0,0,0,0.02)]">
-        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
+        <div className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
           {Object.entries(siteData.skills).map(([group, items], i) => (
             <motion.div
               key={group}
@@ -835,11 +911,11 @@ function Footer() {
   return (
     <footer className="border-t border-border bg-card/20 relative z-10">
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between border-b border-border/40 pb-8 mb-8">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:items-center md:justify-between border-b border-border/40 pb-8 mb-8">
           <a href="#" className="font-display text-xl tracking-tight">
             Shravani<span className="text-primary">.</span>
           </a>
-          <nav className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-muted-foreground">
+          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm font-medium text-muted-foreground md:justify-start">
             {links.map(([label, href]) => (
               <a key={href} href={href} className="link-underline hover:text-foreground transition-colors">
                 {label}
@@ -847,11 +923,11 @@ function Footer() {
             ))}
           </nav>
         </div>
-        <div className="flex flex-col items-start justify-between gap-4 text-xs text-muted-foreground md:flex-row md:items-center">
-          <p>
+        <div className="flex flex-col items-center justify-between gap-4 text-xs text-muted-foreground md:flex-row md:items-center">
+          <p className="text-center md:text-left">
             © {new Date().getFullYear()} {siteData.name}. Crafted with care and Antigravity.
           </p>
-          <p className="text-muted-foreground/80">
+          <p className="text-muted-foreground/80 text-center md:text-left">
             Last Updated: {siteData.lastUpdated}
           </p>
         </div>

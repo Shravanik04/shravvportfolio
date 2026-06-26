@@ -1,10 +1,22 @@
 import photoAsset from "@/assets/shravani-photo.jpg";
 
+export interface Project {
+  name: string;
+  subtitle: string;
+  year: string;
+  description: string;
+  github?: string;
+  imageName?: string;
+  tags?: string[];
+  highlights?: string[];
+  metrics?: string;
+}
+
 export const siteData = {
   name: "Shravani Kumar",
-  role: "Computer Science Student & Aspiring Frontend Developer",
+  role: "Computer Science Student & Aspiring AI/Full-Stack Developer",
   tagline:
-    "Transforming concepts into scalable solutions with AI and modern technologies.",
+    "Computer Science student passionate about AI, full-stack development, and building real-world solutions through innovative software projects.",
   email: "shravanikumar2006@gmail.com",
   phone: "+91 8660377945",
   location: "Bengaluru, India",
@@ -12,8 +24,15 @@ export const siteData = {
   linkedin: "https://www.linkedin.com/in/shravani-k-shrivatsa-b202a537a",
   photo: photoAsset,
   summary:
-    "Hi, I'm Shravani K, a Computer Science Engineering student at RajaRajeswari College of Engineering with a strong interest in technology, software development, and artificial intelligence. I enjoy learning new concepts, solving problems, and continuously improving my technical skills.\n\nCurrently, I am expanding my knowledge in programming, web technologies, machine learning, and cloud computing while building a solid foundation in computer science fundamentals. I am passionate about exploring emerging technologies and staying updated with industry trends.\n\nMy goal is to grow as a software engineer, contribute to innovative solutions, and make a meaningful impact through technology. I believe in continuous learning, curiosity, and embracing challenges as opportunities for growth.",
-  education: [],
+    "I enjoy transforming ideas into practical software solutions. My current focus is AI-powered applications, full-stack development, and building projects that solve meaningful real-world problems.\n\nCurrently, I am expanding my knowledge in programming, web technologies, and machine learning while building a strong foundation in computer science and engineering.\n\nI am passionate about exploring emerging technologies, participating in hackathons, and continuously improving my technical skills to create impactful solutions through technology.",
+  education: [
+    {
+      degree: "Bachelor of Engineering in Computer Science & Engineering",
+      institution: "RajaRajeswari College of Engineering (RRCE), Bengaluru",
+      period: "2023 - 2027",
+      grade: "9.8 / 10 CGPA",
+    }
+  ],
   projects: [
     {
       name: "SentimentScope",
@@ -21,32 +40,67 @@ export const siteData = {
       year: "2026",
       description:
         "An AI-powered sentiment analysis app that classifies text into Positive, Negative, and Neutral categories. Includes preprocessing, prediction, and visualization, wrapped in an interactive UI.",
-      tags: ["Python", "NLP", "Visualization", "Git"],
+
       github: "https://github.com/Shravanik04/ai-sentiment-analyser",
+
+
+      imageName: "sentimentscope-dashboard.png",
     },
     {
-      name: "ProjectPilotAI",
-      subtitle: "AI Project Planner",
+      name: "ProjectPilot AI",
+      subtitle: "AI-Powered Career Intelligence & Project Planning Platform",
       year: "2026",
       description:
-        "Engineered a full-stack AI platform that helps students identify skill gaps, discover high-impact projects, and generate structured development plans aligned with career goals.",
-      tags: ["AI", "Recommendation", "Planning", "Full-stack"],
+        "ProjectPilot AI is a full-stack AI-powered platform that helps students transform career goals into actionable learning paths by analyzing skill gaps, generating personalized career roadmaps, recommending industry-relevant projects, and creating implementation-ready project architectures and development plans.",
+
       github: "https://github.com/Shravanik04/projectpilotai",
+
+
+      imageName: "projectpilot-dashboard.png",
     },
-  ],
+    {
+      name: "Developer Portfolio",
+      subtitle: "Personal Brand & Showcase",
+      year: "2026",
+      description:
+        "Premium, responsive developer portfolio showcasing engineering projects, interactive certifications, and real-time GitHub activity statistics.",
+      github: "https://github.com/Shravanik04/shravvportfolio",
+      imageName: "portfolio-preview.png",
+    },
+  ] as Project[],
   skills: {
-    Languages: ["Python", "C", "C++"],
-    Tools: ["Git", "GitHub", "VS Code", "Antigravity"],
-    Concepts: ["Data Structures", "OOP", "Problem Solving"],
-    Interests: ["AI", "ML", "Software Development", "Web Development"],
+    Languages: ["Python", "C", "C++", "TypeScript", "JavaScript"],
+    Tools: ["Git", "GitHub", "VS Code", "FastAPI", "TailwindCSS"],
+    Concepts: ["Data Structures", "Algorithms", "OOP", "System Design", "Problem Solving"],
+    Interests: ["Generative AI", "Machine Learning", "Full-Stack Development", "Web Apps"],
     Soft: ["Teamwork", "Communication", "Leadership", "Critical Thinking"],
   },
-  activities: [
-    "Maintained 9.8 / 10 CGPA throughout coursework",
-    "Participated in Luminous Hackathon at RNSIT",
-    "Participated in Trigger Hackathon at RRCE",
-    "Competed in Reverse Coding Contest",
-    "Built AI-focused projects exploring real-world use cases",
+
+  achievements: [
+    {
+      title: "9.8 / 10 CGPA Coursework",
+      category: "Academic",
+      details: "Maintained top academic ranking throughout Computer Science Engineering coursework.",
+      icon: "GraduationCap",
+    },
+    {
+      title: "Solaris X Grand Hackathon",
+      category: "Hackathon",
+      details: "Built dev tools to enhance engineering productivity within a 24h sprint at RNSIT.",
+      icon: "Trophy",
+    },
+    {
+      title: "TRIGGER 2K26 Hackathon",
+      category: "Hackathon",
+      details: "Collaborated to develop a hardware/software prototype addressing real-world issues.",
+      icon: "Cpu",
+    },
+    {
+      title: "Reverse Coding Contest",
+      category: "Competition",
+      details: "Placed high in reverse engineering compiled binaries and reconstructing source logic.",
+      icon: "Terminal",
+    },
   ],
   certifications: [
     {
@@ -83,7 +137,7 @@ export const siteData = {
       imageName: "cert-claude.jpg",
     },
   ],
-  lastUpdated: "June 23, 2026",
+  lastUpdated: "June 2026",
 };
 
 export type SiteData = typeof siteData;

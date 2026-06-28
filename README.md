@@ -45,7 +45,7 @@ The portfolio showcases the following personal projects:
    - An AI-powered Career Intelligence and Project Architecture Planner.
    - Maps career objectives, evaluates skill gaps, and plans out comprehensive dev timelines and project architectures.
 
-3. **✨ Developer Portfolio** ([Repository](https://github.com/Shravanik04/student-port-generator))
+3. **✨ Developer Portfolio** ([Repository](https://github.com/Shravanik04/shravvportfolio))
    - This modern, premium developer portfolio website itself, highlighting personal academic credentials, certificates, skills, and projects.
 
 ---
@@ -79,8 +79,8 @@ Make sure you have [Node.js](https://nodejs.org/) installed.
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/Shravanik04/student-port-generator.git
-   cd student-port-generator
+   git clone https://github.com/Shravanik04/shravvportfolio.git
+   cd shravvportfolio
    ```
 
 2. **Install dependencies**:

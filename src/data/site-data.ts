@@ -39,7 +39,7 @@ export const siteData = {
       subtitle: "AI Sentiment Analyzer",
       year: "2026",
       description:
-        "An AI-powered sentiment analysis app that classifies text into Positive, Negative, and Neutral categories. Includes preprocessing, prediction, and visualization, wrapped in an interactive UI.",
+        "An AI-powered sentiment analysis app that classifies text into Positive, Negative, and Neutral categories. wrapped in an interactive UI.",
 
       github: "https://github.com/Shravanik04/ai-sentiment-analyser",
 
@@ -51,7 +51,7 @@ export const siteData = {
       subtitle: "AI-Powered Career Intelligence & Project Planning Platform",
       year: "2026",
       description:
-        "ProjectPilot AI is a full-stack AI-powered platform that helps students transform career goals into actionable learning paths by analyzing skill gaps, generating personalized career roadmaps, recommending industry-relevant projects, and creating implementation-ready project architectures and development plans.",
+        "ProjectPilot AI is a full-stack AI-powered platform that helps students transform career goals into actionable learning paths by analyzing skill gaps, generating personalized career roadmaps, recommending relevant projects, and creating implementation-ready project architectures and development plans.",
 
       github: "https://github.com/Shravanik04/projectpilotai",
 
@@ -63,7 +63,7 @@ export const siteData = {
       subtitle: "Personal Brand & Showcase",
       year: "2026",
       description:
-        "A modern, responsive developer portfolio website built to showcase my projects, technical skills, certifications, and achievements through an interactive and visually engaging interface. Designed with smooth animations, optimized performance, and a clean user experience, it serves as a central hub for my professional profile, resume, and contact information.",
+        "A modern, responsive developer portfolio website built to showcase my projects, technical skills, certifications, and achievements through an interactive and visually engaging interface. Designed with smooth animations and a clean user experience, it serves as a central hub for my professional profile, resume, and contact information.",
       github: "https://github.com/Shravanik04/shravvportfolio",
       imageName: "portfolio-preview.png",
     },

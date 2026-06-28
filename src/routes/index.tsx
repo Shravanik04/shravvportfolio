@@ -56,7 +56,7 @@ import {
 } from "@/components/ui/sheet";
 
 // Project mockups
-import sentimentscopeDashboard from "@/assets/sentimentscope-dashboard.png";
+import emotionsenseaiDashboard from "@/assets/emotionsenseai.png";
 import projectpilotDashboard from "@/assets/projectpilot-dashboard.png";
 import portfolioPreview from "@/assets/portfolio-preview.png";
 
@@ -67,7 +67,7 @@ import certClaude from "@/assets/cert-claude.jpg";
 import certLuminus from "@/assets/cert-luminus.jpg";
 
 const projectImages: Record<string, string> = {
-  "sentimentscope-dashboard.png": sentimentscopeDashboard,
+  "emotionsenseai.png": emotionsenseaiDashboard,
   "projectpilot-dashboard.png": projectpilotDashboard,
   "portfolio-preview.png": portfolioPreview,
 };

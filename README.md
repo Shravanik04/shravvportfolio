@@ -32,6 +32,24 @@ This portfolio showcases professional projects, technical skills, coursework hig
 
 ---
 
+## 📁 Showcase Projects
+
+The portfolio showcases the following personal projects:
+
+1. **🧠 EmotionSense AI** ([Repository](https://github.com/Shravanik04/ai-sentiment-analyser))
+   - A real-time, multilingual AI emotion and sentiment analysis platform.
+   - Built with FastAPI, React, and Hugging Face Transformers.
+   - Detects sentiment, micro-emotions, sarcasm, and emotional transitions with explainable visual metrics.
+
+2. **🚀 ProjectPilot AI** ([Repository](https://github.com/Shravanik04/projectpilotai))
+   - An AI-powered Career Intelligence and Project Architecture Planner.
+   - Maps career objectives, evaluates skill gaps, and plans out comprehensive dev timelines and project architectures.
+
+3. **✨ Developer Portfolio** ([Repository](https://github.com/Shravanik04/student-port-generator))
+   - This modern, premium developer portfolio website itself, highlighting personal academic credentials, certificates, skills, and projects.
+
+---
+
 ## 📂 Project Structure
 
 ```text
@@ -61,8 +79,8 @@ Make sure you have [Node.js](https://nodejs.org/) installed.
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/Shravanik04/shravvportfolio.git
-   cd shravvportfolio
+   git clone https://github.com/Shravanik04/student-port-generator.git
+   cd student-port-generator
    ```
 
 2. **Install dependencies**:

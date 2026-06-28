@@ -35,16 +35,16 @@ export const siteData = {
   ],
   projects: [
     {
-      name: "SentimentScope",
-      subtitle: "AI Sentiment Analyzer",
+      name: "EmotionSense AI",
+      subtitle: "AI sentiment and emotion Analyzer",
       year: "2026",
       description:
-        "An AI-powered sentiment analysis app that classifies text into Positive, Negative, and Neutral categories. wrapped in an interactive UI.",
+        "Developed a real-time multilingual AI emotion and sentiment analysis platform using FastAPI, React, and Hugging Face Transformers. The system detects sentiment, multiple emotions, sarcasm, emotional transitions, and generates explainable insights with live analysis and interactive visualizations.",
 
       github: "https://github.com/Shravanik04/ai-sentiment-analyser",
 
 
-      imageName: "sentimentscope-dashboard.png",
+      imageName: "emotionsenseai.png",
     },
     {
       name: "ProjectPilot AI",

@@ -297,8 +297,8 @@ function Nav() {
                 </div>
                 <SheetClose asChild>
                   <a
-                    href="/resume.pdf"
-                    download="resume.pdf"
+                    href="/shravvresume.pdf"
+                    download="shravvresume.pdf"
                     className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground hover:opacity-90 transition-all text-center"
                   >
                     <Download className="h-4 w-4" /> Download Resume
@@ -343,8 +343,8 @@ function Hero() {
             {/* Prominent Recruiter CTA Buttons */}
             <div className="mt-8 flex flex-wrap items-center gap-2.5">
               <a
-                href="/resume.pdf"
-                download="resume.pdf"
+                href="/shravvresume.pdf"
+                download="shravvresume.pdf"
                 className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4.5 py-3 text-xs sm:text-sm font-semibold text-primary-foreground transition-all duration-300 hover:opacity-95 hover:shadow-[0_12px_24px_-10px_oklch(0.62_0.18_32/0.4)] hover:-translate-y-0.5 cursor-pointer shrink-0"
               >
                 <Download className="h-4 w-4" /> Download Resume
@@ -813,8 +813,8 @@ function Resume() {
           </p>
         </div>
         <a
-          href="/resume.pdf"
-          download="resume.pdf"
+          href="/shravvresume.pdf"
+          download="shravvresume.pdf"
           className="inline-flex items-center gap-2.5 rounded-full bg-primary px-8 py-4 font-semibold text-primary-foreground transition-all duration-300 hover:opacity-95 hover:shadow-[0_12px_24px_-10px_oklch(0.62_0.18_32/0.4)] hover:-translate-y-0.5 cursor-pointer"
         >
           <FileText className="h-5 w-5" />
@@ -897,8 +897,8 @@ function Contact() {
               </div>
               <a 
                 className="link-underline text-sm font-semibold text-primary" 
-                href="/resume.pdf" 
-                download="resume.pdf"
+                href="/shravvresume.pdf" 
+                download="shravvresume.pdf"
               >
                 Download Curriculum Vitae
               </a>

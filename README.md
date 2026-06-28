@@ -16,7 +16,7 @@ This portfolio showcases professional projects, technical skills, coursework hig
 - **📁 Selected Projects**: Spotlights main projects with direct links to their repositories, staggered text entrance animations, and card hover scale effects.
 - **🛠️ Balanced Technical Toolkit**: A responsive grid showing categorized skills that balances gracefully across breakpoints (e.g., 2 columns on mobile, 3 columns on tablet/medium desktop, and 5 columns on large desktop) with staggered entrance animations.
 - **🏆 Combined Hackathons & Certifications**: A unified, responsive grid showcasing contest awards, hackathons, and certifications with an interactive certificate preview modal.
-- **📄 Downloadable Resume**: Dedicated download modules for the student's curriculum vitae (`resume.pdf`).
+- **📄 Downloadable Resume**: Dedicated download modules for the student's curriculum vitae (`shravvresume.pdf`).
 - **📨 Contact Mailer Form**: Fully functional contact form that pre-fills email drafts to the receiver's address.
 
 ---
@@ -55,7 +55,7 @@ The portfolio showcases the following personal projects:
 ```text
 student-port-generator/
 ├── public/
-│   └── resume.pdf            # Resume download file
+│   └── shravvresume.pdf      # Resume download file
 ├── src/
 │   ├── assets/               # Image/photo assets
 │   ├── components/           # UI elements & custom navigation components
@@ -115,7 +115,7 @@ export const siteData = {
 ```
 
 ### 2. Replacing the Resume PDF
-Replace the file located in `public/resume.pdf` with your updated resume PDF.
+Replace the file located in `public/shravvresume.pdf` with your updated resume PDF.
 
 ### 3. Replacing the Portrait Image
 Place your portrait photo inside `src/assets/shravani-photo.jpg` to replace the default profile photo.

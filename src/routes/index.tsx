@@ -689,7 +689,7 @@ function AchievementsAndCertifications() {
     {
       name: "9.8 / 10 CGPA Coursework",
       issuer: "RajaRajeswari College of Engineering (RRCE)",
-      date: "2023 - 2027",
+      date: "2024 - 2028",
       type: "Academic",
       details: "Maintained top academic ranking throughout Computer Science Engineering coursework.",
     },

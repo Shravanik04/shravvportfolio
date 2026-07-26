@@ -29,7 +29,7 @@ export const siteData = {
     {
       degree: "Bachelor of Engineering in Computer Science & Engineering",
       institution: "RajaRajeswari College of Engineering (RRCE), Bengaluru",
-      period: "2023 - 2027",
+      period: "2024 - 2028",
       grade: "9.8 / 10 CGPA",
     }
   ],
@@ -70,7 +70,7 @@ export const siteData = {
   ] as Project[],
   skills: {
     Languages: ["Python", "C", "C++", "TypeScript", "JavaScript"],
-    Tools: ["Git", "GitHub", "VS Code", "FastAPI", "TailwindCSS"],
+    Tools: ["Git", "GitHub", "VS Code", "React", "FastAPI", "TailwindCSS"],
     Concepts: ["Data Structures", "Algorithms", "OOP", "System Design", "Problem Solving"],
     Interests: ["Generative AI", "Machine Learning", "Full-Stack Development", "Web Apps"],
     Soft: ["Teamwork", "Communication", "Leadership", "Critical Thinking"],

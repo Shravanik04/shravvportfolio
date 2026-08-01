@@ -136,6 +136,14 @@ export const siteData = {
       details: "Hands-on certificate of completion for Anthropic's Claude Code practical training (Credential: psw483egerub).",
       imageName: "cert-claude.jpg",
     },
+    {
+      name: "Introduction to Generative AI Studio",
+      issuer: "Simplilearn SkillUp | Google Cloud",
+      date: "August 01, 2026",
+      type: "Certification",
+      details: "Successfully completed the Introduction to Generative AI Studio online course powered by Google Cloud on Simplilearn SkillUp (Certificate Code: 10543018).",
+      imageName: "cert-genai.jpg",
+    }
   ],
   lastUpdated: "June 2026",
 };

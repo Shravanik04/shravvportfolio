@@ -156,7 +156,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "CS student at RRCE (CGPA 9.8/10) — projects in AI, ML, and full-stack development.",
+          "CS student at RRCE (CGPA 9.6/10) — projects in AI, ML, and full-stack development.",
       },
       { property: "og:url", content: "/" },
     ],
@@ -695,7 +695,7 @@ function AchievementsAndCertifications() {
 
   const combinedItems = [
     {
-      name: "9.8 / 10 CGPA Coursework",
+      name: "9.6 / 10 CGPA Coursework",
       issuer: "RajaRajeswari College of Engineering (RRCE)",
       date: "2024 - 2028",
       type: "Academic",

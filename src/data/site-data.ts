@@ -30,7 +30,7 @@ export const siteData = {
       degree: "Bachelor of Engineering in Computer Science & Engineering",
       institution: "RajaRajeswari College of Engineering (RRCE), Bengaluru",
       period: "2024 - 2028",
-      grade: "9.8 / 10 CGPA",
+      grade: "9.6 / 10 CGPA",
     }
   ],
   projects: [
@@ -78,7 +78,7 @@ export const siteData = {
 
   achievements: [
     {
-      title: "9.8 / 10 CGPA Coursework",
+      title: "9.6 / 10 CGPA Coursework",
       category: "Academic",
       details: "Maintained top academic ranking throughout Computer Science Engineering coursework.",
       icon: "GraduationCap",

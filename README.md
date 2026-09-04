@@ -15,8 +15,8 @@ This portfolio showcases professional projects, technical skills, coursework hig
   - **Mobile & Tablet**: Accessible, sliding hamburger drawer menu (using Radix-UI/Sheet) containing vertical navigation links, socials, and resume downloads. Closes automatically on navigation.
 - **📁 Selected Projects**: Spotlights main projects with direct links to their repositories, staggered text entrance animations, and card hover scale effects.
 - **🛠️ Balanced Technical Toolkit**: A responsive grid showing categorized skills that balances gracefully across breakpoints (e.g., 2 columns on mobile, 3 columns on tablet/medium desktop, and 5 columns on large desktop) with staggered entrance animations.
-- **🏆 Combined Hackathons & Certifications**: A unified, responsive grid showcasing contest awards, hackathons, and certifications (including Google Cloud Generative AI Studio, Claude Code in Action, Trigger 2.0, ULTRON-25, and Luminus 2.0) with an interactive certificate preview modal.
-- **📄 Downloadable Resume**: Dedicated download modules for the student's curriculum vitae (`shravvresume.pdf`).
+- **🏆 Combined Hackathons & Certifications**: A unified, responsive grid showcasing contest awards, hackathons, and certifications (including Google Cloud Generative AI Studio, Claude Code in Action, Trigger 2.0, ULTRON-25, Luminus 2.0, Python Skill Up, Introduction to AI, and Programming for Everybody) with an interactive certificate preview modal.
+- **📄 Downloadable Resume**: Dedicated download modules for the current curriculum vitae (`shravvresume.pdf`).
 - **📨 Contact Mailer Form**: Fully functional contact form that pre-fills email drafts to the receiver's address.
 
 ---
@@ -57,7 +57,7 @@ student-port-generator/
 ├── public/
 │   └── shravvresume.pdf      # Resume download file
 ├── src/
-│   ├── assets/               # Image/photo assets
+│   ├── assets/               # Profile, project, and certificate images
 │   ├── components/           # UI elements & custom navigation components
 │   ├── data/                 # site-data.ts (Central data source)
 │   ├── routes/               # index.tsx (Main route & page structure)
@@ -115,9 +115,12 @@ export const siteData = {
 ```
 
 ### 2. Replacing the Resume PDF
-Replace the file located in `public/shravvresume.pdf` with your updated resume PDF.
+Replace the file located in `public/shravvresume.pdf` with your updated resume PDF. The resume is linked from the navigation, hero, resume section, and mobile menu.
 
-### 3. Replacing the Portrait Image
+### 3. Adding Certificates
+Add the certificate image to `src/assets/`, register it in the `certImages` map in `src/routes/index.tsx`, and add its name, issuer, date, details, and image filename to `siteData.certifications` in `src/data/site-data.ts`.
+
+### 4. Replacing the Portrait Image
 Place your portrait photo inside `src/assets/shravani-photo.jpg` to replace the default profile photo.
 
 ---

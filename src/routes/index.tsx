@@ -66,6 +66,9 @@ import certUltron from "@/assets/cert-ultron.jpg";
 import certClaude from "@/assets/cert-claude.jpg";
 import certLuminus from "@/assets/cert-luminus.jpg";
 import certGenai from "@/assets/cert-genai.jpg";
+import certGfg from "@/assets/gfg.jpg";
+import certIntroToAi from "@/assets/intro to ai_page.jpg";
+import certPyforall from "@/assets/pyforall.jpg";
 
 const projectImages: Record<string, string> = {
   "emotionsenseai.png": emotionsenseaiDashboard,
@@ -79,6 +82,9 @@ const certImages: Record<string, string> = {
   "cert-claude.jpg": certClaude,
   "cert-luminus.jpg": certLuminus,
   "cert-genai.jpg": certGenai,
+  "gfg.jpg": certGfg,
+  "intro to ai_page.jpg": certIntroToAi,
+  "pyforall.jpg": certPyforall,
 };
 
 function getSkillIcon(skill: string): React.ReactNode {

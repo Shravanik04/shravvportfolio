@@ -143,9 +143,33 @@ export const siteData = {
       type: "Certification",
       details: "Successfully completed the Introduction to Generative AI Studio online course powered by Google Cloud on Simplilearn SkillUp (Certificate Code: 10543018).",
       imageName: "cert-genai.jpg",
-    }
+    },
+    {
+      name: "Python Skill Up",
+      issuer: "GeeksforGeeks | Nation SkillUp",
+      date: "2026",
+      type: "Certification",
+      details: "Successfully completed the Python Skill Up course focused on building practical Python programming skills.",
+      imageName: "gfg.jpg",
+    },
+    {
+      name: "Introduction to AI",
+      issuer: "Google | Coursera",
+      date: "August 17, 2026",
+      type: "Certification",
+      details: "Successfully completed the Introduction to AI online course authorized by Google and delivered through Coursera.",
+      imageName: "intro to ai_page.jpg",
+    },
+    {
+      name: "Programming for Everybody (Getting Started with Python)",
+      issuer: "University of Michigan | Coursera",
+      date: "August 24, 2026",
+      type: "Certification",
+      details: "Successfully completed Programming for Everybody (Getting Started with Python), an online course authorized by the University of Michigan and delivered through Coursera.",
+      imageName: "pyforall.jpg",
+    },
   ],
-  lastUpdated: "June 2026",
+  lastUpdated: "August 2026",
 };
 
 export type SiteData = typeof siteData;
